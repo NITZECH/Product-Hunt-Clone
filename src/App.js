@@ -8,6 +8,10 @@ import Search from './pages/Search';
 import Submit from './pages/Submit';
 import Profile from './pages/Profile';
 import {createOutline, listCircleOutline, personCircleOutline, searchOutline, trendingUpOutline} from 'ionicons/icons';
+import Forgot from './pages/Forgot';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import EditProfile from './pages/EditProfile';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -39,6 +43,11 @@ const App = () =>{return (
         <Route path="/search" component={Search}       />
         <Route path="/submit" component={Submit}       />
         <Route path="/profile" component={Profile}     />
+        <Route path="/forgot" component={Forgot}     />
+        <Route path="/edit-profile" component={EditProfile}     />
+        <Route path="/register" component={Signup}     />
+        <Route path="/login" component={Login}     />
+
         <Route component={() => <Redirect to='/home' /> } />
         </IonRouterOutlet>
     <IonTabBar slot='bottom'>
