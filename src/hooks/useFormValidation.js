@@ -1,42 +1,46 @@
-import react from 'react';
-import { toast } from '../utils/toast';
+import React from "react";
+import { toast } from "../utils/toast";
 
-function useFormValidation(initialstate, validate, action){
-    const [values, setValues] = React.useState(initialstate);
-    const [errors, setErrors] = React.useState({});
-    const [isSubmbitting, setSubmitting] = React.useState(false);
+function useFormValidation(initialState, validate, action) {
+  const [values, setValues] = React.useState(initialState);
+  const [errors, setErrors] = React.useState({});
+  const [isSubmitting, setSubmitting] = React.useState(false);
 
-    React.useEffect(() => {
-        if (isSubmbitting){
-            const noErros = Object.keys(erros).length === 0;
-            if(noErros){
-                action();
-                setValues(initialstate);
-                setSubmitting(false);
-            } else {
-                toast(Object.values(erros).join(" "));
-                setSubmitting(false);
-            }
-        }
-    }, [errors]);
-
-
-    function handleChange(event) {
-        setValues(previousValues => ({
-            ...previousValues,
-            [event.target.value] : event.target.value
-        }))
+  React.useEffect(() => {
+    if (isSubmitting) {
+      const noErrors = Object.keys(errors).length === 0;
+      if (noErrors) {
+        action();
+        setValues(initialState);
+        setSubmitting(false);
+      } else {
+        toast(Object.values(errors).join(" "));
+        setSubmitting(false);
+      }
     }
-    
-    function handleSubmit() {
-        const validationErros = validate(values);
-        setErrors(validationErros);
-        setSubmitting(true);
-    }
+    // eslint-disable-next-line
+  }, [errors]);
 
-    return {
-        handleSubmit, handleChange, values, setValues, isSubmbitting
-    };
+  function handleChange(event) {
+    setValues((previousValues) => ({
+      ...previousValues,
+      [event.target.name]: event.target.value,
+    }));
+  }
+
+  function handleSubmit() {
+    const validationErrors = validate(values);
+    setErrors(validationErrors);
+    setSubmitting(true);
+  }
+
+  return {
+    handleSubmit,
+    handleChange,
+    values,
+    setValues,
+    isSubmitting,
+  };
 }
 
-export default useFormValidation
+export default useFormValidation;
