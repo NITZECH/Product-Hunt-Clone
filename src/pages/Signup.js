@@ -12,9 +12,9 @@ import {
 } from "@ionic/react";
 import { toast } from "../utils/toast";
 import useFormValidation from "../hooks/useFormValidation";
+import validateSignup from "../components/Auth/validateSignup";
 import firebase from "../firebase";
 import NavHeader from "../components/Header/NavHeader";
-import validateSignup from '../Auth/ValidateSignUp'
 
 const INITIAL_STATE = {
   name: "",

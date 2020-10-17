@@ -1,16 +1,19 @@
-import {IonHeader, IonTitle, IonToolbar } from '@ionic/react'
-import React from 'react'
+import React from "react";
+import { IonHeader, IonTitle, IonToolbar } from "@ionic/react";
 
 const SmallHeader = ({ title }) => {
-    return (
-      <IonHeader  >
-          <IonToolbar color='primary' style={{background: "#cc4d29"}} >
-              <IonTitle size='large'>
-{title}
-              </IonTitle>
-          </IonToolbar>
-      </IonHeader>
-    )
-}
+  return (
+    <IonHeader>
+      <IonToolbar
+        style={{
+          background: "#cc4d29",
+        }}
+        color="primary"
+      >
+        <IonTitle>{title}</IonTitle>
+      </IonToolbar>
+    </IonHeader>
+  );
+};
 
-export default SmallHeader
+export default SmallHeader;

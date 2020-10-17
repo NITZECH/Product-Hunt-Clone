@@ -13,9 +13,9 @@ import {
 } from "@ionic/react";
 import { toast } from "../utils/toast";
 import useFormValidation from "../hooks/useFormValidation";
+import validateLogin from "../components/Auth/validateLogin";
 import firebase from "../firebase";
 import NavHeader from "../components/Header/NavHeader";
-import validateLogin from '../Auth/ValidateLogin';
 
 const INITIAL_STATE = {
   email: "",

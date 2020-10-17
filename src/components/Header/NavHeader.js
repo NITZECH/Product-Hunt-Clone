@@ -1,17 +1,23 @@
-import { IonBackButton, IonButton, IonHeader, IonTitle, IonToolbar } from '@ionic/react'
-import React from 'react'
+import React from "react";
+import {
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+  IonButtons,
+  IonBackButton,
+} from "@ionic/react";
 
-const  NavHeader = ({ title }) => {
-    return (
+const NavHeader = ({ title }) => {
+  return (
     <IonHeader>
-        <IonToolbar color='primary'>
-            <IonButton slot='start' >
-                <IonBackButton defaultHref='/' />
-            </IonButton>
-    <IonTitle>{title}</IonTitle>
-        </IonToolbar>
+      <IonToolbar color="primary">
+        <IonButtons slot="start">
+          <IonBackButton defaultHref="/" />
+        </IonButtons>
+        <IonTitle>{title}</IonTitle>
+      </IonToolbar>
     </IonHeader>
-    )
-}
+  );
+};
 
-export default NavHeader
+export default NavHeader;
