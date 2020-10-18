@@ -1,13 +1,15 @@
 import app from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
+import "firebase/storage";
 
-import firebaseConfig from "./Config";
+import firebaseConfig from "./config";
 
 class Firebase {
   constructor() {
     app.initializeApp(firebaseConfig);
     this.app = app;
+    this.storage = app.storage();
     this.auth = app.auth();
     this.db = app.firestore();
   }
