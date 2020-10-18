@@ -47,6 +47,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import Product from "./pages/Product";
 
 const App = () => {
   const [user, setUser] = useAuth();
@@ -70,6 +71,7 @@ const App = () => {
               <Route path="/register" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot" component={Forgot} />
+              <Route path="/product/:productId" component={Product} />
               <Route component={() => <Redirect to="/home" />} />
             </IonRouterOutlet>
             <IonTabBar slot="bottom">
